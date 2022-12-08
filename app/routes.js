@@ -45,6 +45,18 @@ const routes = [
       return parameters
     },
   },
+  /**
+   * Request body payload
+   * Example Uri: /request/payload
+   */
+  {
+    method: 'POST',
+    path: '/request/payload',
+    handler: (request, h) => {
+      const payload = request.payload
+      return payload
+    },
+  },
 ]
 
 module.exports = routes
