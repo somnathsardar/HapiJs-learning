@@ -58,6 +58,25 @@ const routes = [
     },
   },
   /**
+   * Route for getting user location details.
+   */
+  {
+    method: 'GET',
+    path: '/location',
+    handler: (request, h) => {
+        const location = request.location
+        return location
+    },
+    config: {
+      plugins: {
+        'hapi-geo-locate': {
+          enabled: true,
+          fakeIP: '8.8.8.8'
+        }
+      }
+    },
+  },
+  /**
    * 404 handling
    */
   {
